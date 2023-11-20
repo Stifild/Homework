@@ -1,15 +1,17 @@
-def inputting(txt: str = None) -> str | int:
+def inputting(txt: str = 'Ввод: ') -> str | int:
     """
     Модифицированный input()
+    :rtype: object
     :type txt: str
     :param txt: текст для вывода перед вводом. Работает также как input('dsaj').
     :return: Если было введено число выдает число. Иначе строку.
     """
     try:
         inp = int(input(txt))
-    except TypeError:
+        return inp
+    except Exception:
         inp = input(txt)
-    return inp
+        return inp
 
 
 def validation(lst: list[str]) -> str:
